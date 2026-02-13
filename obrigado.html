@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensagem Enviada | Rafael Vieira Gonzaga</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .mensagem-sucesso {
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .icone-sucesso {
+            font-size: 4rem;
+            color: #10b981;
+            margin-bottom: 2rem;
+        }
+        
+        .mensagem-sucesso h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--cor-primaria);
+        }
+        
+        .mensagem-sucesso p {
+            font-size: 1.2rem;
+            color: var(--cor-texto-claro);
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+        
+        .timer {
+            font-size: 0.9rem;
+            color: var(--cor-texto-claro);
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="cabecalho">
+        <nav class="nav">
+            <a class="logo" href="index.html">RVG</a>
+        </nav>
+    </header>
+
+    <main class="secao">
+        <section class="mensagem-sucesso">
+            <div class="icone-sucesso">✓</div>
+            <h1>Mensagem Enviada com Sucesso!</h1>
+            <p>Obrigado pelo seu contato, <strong id="nome-usuario">Rafael</strong>! Recebi sua mensagem e retornarei em até 48 horas.</p>
+            <p>Responderei para : <strong id="email-usuario">Raf.Vieira@Gmail.Com</strong></p>
+            
+            <div style="margin-top: 2rem;">
+                <a href="index.html" class="botao">Voltar ao Início</a>
+                <a href="index.html#projetos" class="botao" style="background-color: var(--cor-fundo-card); color: var(--cor-primaria); margin-left: 1rem;">
+                    Ver Meus Projetos
+                </a>
+            </div>
+            
+            <p class="timer">Você será redirecionado automaticamente em <span id="countdown">10</span> segundos...</p>
+        </section>
+    </main>
+
+    <script>
+        let seconds = 10;
+        const countdownElement = document.getElementById('countdown');
+        
+        const countdown = setInterval(() => {
+            seconds--;
+            countdownElement.textContent = seconds;
+            
+            if (seconds <= 0) {
+                clearInterval(countdown);
+                window.location.href = 'index.html';
+            }
+        }, 1000);
+        
+        window.addEventListener('DOMContentLoaded', () => {
+            const nomeSalvo = sessionStorage.getItem('ultimoNomeContato');
+            const emailSalvo = sessionStorage.getItem('ultimoEmailContato');
+            
+            if (nomeSalvo) {
+                document.getElementById('nome-usuario').textContent = nomeSalvo;
+            }
+            if (emailSalvo) {
+                document.getElementById('email-usuario').textContent = emailSalvo;
+            }
+            
+            sessionStorage.removeItem('ultimoNomeContato');
+            sessionStorage.removeItem('ultimoEmailContato');
+        });
+    </script>
+</body>
+</html>

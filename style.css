@@ -1,0 +1,613 @@
+/* style.css */
+:root {
+    --cor-primaria: #2563eb;
+    --cor-secundaria: #1e40af;
+    --cor-fundo: #f8fafc;
+    --cor-texto: #1e293b;
+    --cor-texto-claro: #64748b;
+    --cor-borda: #e2e8f0;
+    --cor-branco: #ffffff;
+    --sombra: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --borda-arredondada: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--cor-texto);
+    background-color: var(--cor-branco);
+    line-height: 1.6;
+}
+
+
+.cabecalho {
+    background-color: var(--cor-branco);
+    box-shadow: var(--sombra);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--cor-primaria);
+    text-decoration: none;
+}
+
+.nav-lista {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-lista a {
+    text-decoration: none;
+    color: var(--cor-texto);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-lista a:hover {
+    color: var(--cor-primaria);
+}
+
+
+.hero {
+    max-width: 1200px;
+    margin: 6rem auto 4rem;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.destaque {
+    color: var(--cor-primaria);
+}
+
+.subtitulo {
+    font-size: 1.25rem;
+    color: var(--cor-primaria);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.descricao {
+    color: var(--cor-texto-claro);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.botao {
+    display: inline-block;
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 0.8rem 1.8rem;
+    border-radius: var(--borda-arredondada);
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.botao:hover {
+    background-color: var(--cor-secundaria);
+    transform: translateY(-3px);
+}
+
+.hero-imagem .imagem-placeholder {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+    margin: 0 auto;
+}
+
+
+.secao {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.secao-titulo {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--cor-texto);
+}
+
+.fundo-claro {
+    background-color: var(--cor-fundo);
+    padding: 4rem 2rem;
+    border-radius: var(--borda-arredondada);
+}
+
+
+.habilidades-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.habilidade-categoria {
+    background: var(--cor-branco);
+    padding: 1.8rem;
+    border-radius: var(--borda-arredondada);
+    box-shadow: var(--sombra);
+}
+
+.habilidade-categoria h3 {
+    color: var(--cor-primaria);
+    margin-bottom: 1.2rem;
+    font-size: 1.3rem;
+}
+
+.habilidades-lista {
+    list-style: none;
+}
+
+.habilidades-lista li {
+    padding: 0.7rem 0;
+    border-bottom: 1px solid var(--cor-borda);
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.habilidades-lista li:last-child {
+    border-bottom: none;
+}
+
+.habilidades-lista i {
+    color: var(--cor-primaria);
+    font-size: 1.2rem;
+    width: 24px;
+}
+
+
+.formacao-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.formacao-card {
+    background: var(--cor-branco);
+    padding: 2rem;
+    border-radius: var(--borda-arredondada);
+    box-shadow: var(--sombra);
+    border-left: 4px solid var(--cor-primaria);
+}
+
+.formacao-card h3 {
+    margin-bottom: 0.5rem;
+}
+
+.formacao-instituicao {
+    color: var(--cor-primaria);
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.formacao-periodo {
+    color: var(--cor-texto-claro);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.formacao-card ul {
+    padding-left: 1.2rem;
+    color: var(--cor-texto-claro);
+}
+
+.formacao-card li {
+    margin-bottom: 0.5rem;
+}
+
+
+.projetos-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.projeto-card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    background: var(--cor-branco);
+    border-radius: var(--borda-arredondada);
+    overflow: hidden;
+    box-shadow: var(--sombra);
+}
+
+.projeto-imagem {
+    min-height: 200px;
+}
+
+.projeto-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.projeto-conteudo {
+    padding: 2rem;
+}
+
+.projeto-conteudo h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.projeto-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 1.5rem 0;
+}
+
+.projeto-tags span {
+    background-color: #e0f2fe;
+    color: var(--cor-primaria);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.projeto-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.botao-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--cor-primaria);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.botao-link:hover {
+    color: var(--cor-secundaria);
+}
+
+
+.contato-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.contato-info p {
+    margin-bottom: 1.5rem;
+    color: var(--cor-texto-claro);
+}
+
+.contato-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.contato-links a {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--cor-texto);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.contato-links a:hover {
+    color: var(--cor-primaria);
+}
+
+.contato-links i {
+    color: var(--cor-primaria);
+    font-size: 1.2rem;
+    width: 24px;
+}
+
+.contato-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.contato-form input,
+.contato-form textarea {
+    padding: 0.9rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--borda-arredondada);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+}
+
+.contato-form button {
+    align-self: flex-start;
+}
+
+
+.rodape {
+    text-align: center;
+    padding: 2rem;
+    color: var(--cor-texto-claro);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--cor-borda);
+    margin-top: 4rem;
+}
+
+
+@media (max-width: 768px) {
+
+    .hero,
+    .projeto-card,
+    .contato-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        margin-top: 5rem;
+        text-align: center;
+    }
+
+    .nav-lista {
+        gap: 1rem;
+    }
+
+    .secao-titulo {
+        font-size: 1.8rem;
+    }
+}
+
+/* VARIÁVEIS DE CORES - Light Mode (padrão) */
+:root {
+    --cor-primaria: #2563eb;
+    --cor-secundaria: #1e40af;
+    --cor-fundo: #f8fafc;
+    --cor-fundo-card: #ffffff;
+    --cor-texto: #1e293b;
+    --cor-texto-claro: #64748b;
+    --cor-borda: #e2e8f0;
+    --cor-branco: #ffffff;
+    --cor-sombra: rgba(0, 0, 0, 0.1);
+    --sombra: 0 4px 6px -1px var(--cor-sombra);
+    --borda-arredondada: 8px;
+
+    /* Transições suaves */
+    --transicao-rapida: all 0.3s ease;
+    --transicao-lenta: all 0.5s ease;
+}
+
+/* VARIÁVEIS DE CORES - Dark Mode */
+[data-theme="dark"] {
+    --cor-primaria: #60a5fa;
+    --cor-secundaria: #93c5fd;
+    --cor-fundo: #0f172a;
+    --cor-fundo-card: #1e293b;
+    --cor-texto: #f1f5f9;
+    --cor-texto-claro: #cbd5e1;
+    --cor-borda: #334155;
+    --cor-branco: #1e293b;
+    --cor-sombra: rgba(0, 0, 0, 0.3);
+    --sombra: 0 4px 6px -1px var(--cor-sombra);
+}
+
+/* Aplica transições suaves a elementos que mudam de cor */
+body,
+.cabecalho,
+.habilidade-categoria,
+.formacao-card,
+.projeto-card,
+.contato-form input,
+.contato-form textarea {
+    transition: var(--transicao-rapida);
+}
+
+/* ESTILOS DO BOTÃO DE TOGGLE */
+.dark-mode-toggle {
+    background: transparent;
+    border: 2px solid var(--cor-borda);
+    border-radius: 50px;
+    width: 60px;
+    height: 32px;
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: var(--transicao-rapida);
+}
+
+.dark-mode-toggle:hover {
+    border-color: var(--cor-primaria);
+    transform: scale(1.05);
+}
+
+.dark-mode-toggle i {
+    font-size: 14px;
+    padding: 0 6px;
+    transition: var(--transicao-rapida);
+}
+
+.dark-mode-toggle .fa-sun {
+    color: #f59e0b;
+    /* Amarelo do sol */
+}
+
+.dark-mode-toggle .fa-moon {
+    color: #94a3b8;
+    /* Cinza da lua */
+}
+
+/* Indicador circular que se move */
+.dark-mode-toggle::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: var(--cor-primaria);
+    border-radius: 50%;
+    left: 4px;
+    transition: transform 0.3s ease;
+}
+
+/* Posição do indicador no Dark Mode */
+[data-theme="dark"] .dark-mode-toggle::after {
+    transform: translateX(28px);
+    background: var(--cor-secundaria);
+}
+
+/* Ajuste das cores dos ícones no Dark Mode */
+[data-theme="dark"] .dark-mode-toggle .fa-sun {
+    color: #94a3b8;
+}
+
+[data-theme="dark"] .dark-mode-toggle .fa-moon {
+    color: #fbbf24;
+    /* Amarelo mais claro */
+}
+
+/* AJUSTES ESPECÍFICOS PARA DARK MODE */
+
+/* Cor do texto dos links na navegação no dark mode */
+[data-theme="dark"] .nav-lista a {
+    color: var(--cor-texto-claro);
+}
+
+[data-theme="dark"] .nav-lista a:hover {
+    color: var(--cor-secundaria);
+}
+
+/* Placeholder da imagem do herói */
+[data-theme="dark"] .hero-imagem .imagem-placeholder {
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+}
+
+/* Tags dos projetos */
+[data-theme="dark"] .projeto-tags span {
+    background-color: #334155;
+    color: var(--cor-secundaria);
+}
+
+/* Botões de link */
+[data-theme="dark"] .botao-link {
+    color: var(--cor-secundaria);
+}
+
+[data-theme="dark"] .botao-link:hover {
+    color: var(--cor-primaria);
+}
+
+/* Links de contato */
+[data-theme="dark"] .contato-links a {
+    color: var(--cor-texto-claro);
+}
+
+[data-theme="dark"] .contato-links a:hover {
+    color: var(--cor-secundaria);
+}
+
+/* Rodapé */
+[data-theme="dark"] .rodape {
+    border-top-color: var(--cor-borda);
+    color: var(--cor-texto-claro);
+}
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1.0rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--borda-arredondada);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: var(--transicao-rapida);
+    background-color: var(--cor-fundo-card);
+    color: var(--cor-texto);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Botão com estados */
+.botao .btn-loading {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Mensagens de status */
+.form-status {
+    padding: 1rem;
+    border-radius: var(--borda-arredondada);
+    margin-top: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+    transition: var(--transicao-rapida);
+}
+
+.form-status.success {
+    background-color: rgba(16, 185, 129, 0.1);
+    border: 1px solid #10b981;
+    color: #10b981;
+}
+
+.form-status.error {
+    background-color: rgba(239, 68, 68, 0.1);
+    border: 1px solid #ef4444;
+    color: #ef4444;
+}
+
+
+.form-disabled input,
+.form-disabled textarea,
+.form-disabled button {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
